@@ -1759,57 +1759,48 @@ input, select, textarea {
 	}
 
 	header p {
-		color: rgba(255, 255, 255, 0.5);
+		color: #ffffff;
 		position: relative;
-		top: -0.25em;
+		margin: 0 0 1.5em 0;
+	}
+
+	header h2 + p {
+		font-size: 1.25em;
+		margin-top: -1em;
+		line-height: 1.75em;
 	}
 
 	header h3 + p {
 		font-size: 1.1em;
+		margin-top: -0.8em;
+		line-height: 1.75em;
 	}
 
 	header h4 + p,
 	header h5 + p,
 	header h6 + p {
 		font-size: 0.9em;
+		margin-top: -0.6em;
+		line-height: 1.5em;
 	}
 
 	header.major {
-		margin: 0 0 3.5em 0;
+		margin: 0 0 4em 0;
+		position: relative;
+		text-align: center;
 	}
 
-		header.major h2, header.major h3, header.major h4, header.major h5, header.major h6 {
-			border-bottom: solid 2px #fff;
+		header.major:after {
+			background: #e44c65;
+			content: '';
 			display: inline-block;
-			padding-bottom: 1em;
-			position: relative;
+			height: 0.2em;
+			max-width: 20em;
+			width: 75%;
 		}
 
-			header.major h2:after, header.major h3:after, header.major h4:after, header.major h5:after, header.major h6:after {
-				content: '';
-				display: block;
-				height: 1px;
-			}
-
-		header.major p {
-			color: #fff;
-			top: 0;
-		}
-
-		@media screen and (max-width: 736px) {
-
-			header.major {
-				margin: 0 0 2em 0;
-			}
-
-		}
-
-	@media screen and (max-width: 980px) {
-
-		header br {
-			display: none;
-		}
-
+	footer.major {
+		margin: 4em 0 0 0;
 	}
 
 /* Form */
@@ -3440,126 +3431,84 @@ input, select, textarea {
 
 /* Header */
 
-	#header {
-		-moz-transition: background-color 0.2s ease;
-		-webkit-transition: background-color 0.2s ease;
-		-ms-transition: background-color 0.2s ease;
-		transition: background-color 0.2s ease;
-		background: #2e3842;
-		height: 3em;
-		left: 0;
-		line-height: 3em;
-		position: fixed;
+#page-wrapper {
+	padding-top: 3.5em;
+}
+
+#header {
+	background: rgba(39, 40, 51, 0.965);
+	box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.25);
+	cursor: default;
+	height: 3.5em;
+	left: 0;
+	line-height: 3.5em;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+}
+
+	#header h1 {
+		height: inherit;
+		left: 1.25em;
+		line-height: inherit;
+		margin: 0;
+		position: absolute;
 		top: 0;
-		width: 100%;
-		z-index: 10000;
 	}
 
-		#header h1 {
-			-moz-transition: opacity 0.2s ease;
-			-webkit-transition: opacity 0.2s ease;
-			-ms-transition: opacity 0.2s ease;
-			transition: opacity 0.2s ease;
-			height: inherit;
-			left: 1.25em;
-			line-height: inherit;
-			position: absolute;
-			top: 0;
+	#header nav {
+		position: absolute;
+		right: 1em;
+		top: 0;
+	}
+
+		#header nav ul {
+			margin: 0;
 		}
 
-			#header h1 a {
-				border: 0;
-				display: block;
-				height: inherit;
-				line-height: inherit;
+			#header nav ul li {
+				display: inline-block;
+				margin-left: 1em;
 			}
 
-				@media screen and (max-width: 736px) {
-
-					#header h1 a {
-						font-size: 0.8em;
-					}
-
-				}
-
-		#header nav {
-			height: inherit;
-			line-height: inherit;
-			position: absolute;
-			right: 0;
-			top: 0;
-		}
-
-			#header nav > ul {
-				list-style: none;
-				margin: 0;
-				padding: 0;
-				white-space: nowrap;
-			}
-
-				#header nav > ul > li {
+				#header nav ul li a, #header nav ul li span {
+					border: 0;
+					color: inherit;
 					display: inline-block;
-					padding: 0;
+					height: inherit;
+					line-height: inherit;
+					outline: 0;
 				}
 
-					#header nav > ul > li > a {
-						border: 0;
-						color: #fff;
-						display: block;
-						font-size: 0.8em;
-						letter-spacing: 0.225em;
-						padding: 0 1.5em;
-						text-transform: uppercase;
+					#header nav ul li a.button, #header nav ul li span.button {
+						height: 2em;
+						line-height: 2em;
+						padding: 0 1.25em;
 					}
 
-						#header nav > ul > li > a.menuToggle {
-							outline: 0;
-							position: relative;
-						}
-
-							#header nav > ul > li > a.menuToggle:after {
-								background-image: url("images/bars.svg");
-								background-position: right center;
-								background-repeat: no-repeat;
-								content: '';
-								display: inline-block;
-								height: 3.75em;
-								vertical-align: top;
-								width: 2em;
-							}
-
-							@media screen and (max-width: 736px) {
-
-								#header nav > ul > li > a.menuToggle {
-									padding: 0 1.5em;
-								}
-
-									#header nav > ul > li > a.menuToggle span {
-										display: none;
-									}
-
-							}
-
-						@media screen and (max-width: 736px) {
-
-							#header nav > ul > li > a {
-								padding: 0 0 0 1.5em;
-							}
-
-						}
-
-					#header nav > ul > li:first-child {
-						margin-left: 0;
+					#header nav ul li a:not(.button):before, #header nav ul li span:not(.button):before {
+						margin-right: 0.5em;
 					}
 
-		#header.alt {
-			background: transparent;
-		}
+				#header nav ul li.active > a, #header nav ul li.active > span {
+					color: #e44c65;
+				}
 
-			#header.alt h1 {
-				pointer-events: none;
-				opacity: 0;
-			}
+				#header nav ul li > ul {
+					display: none;
+				}
+
+body.landing #page-wrapper {
+	padding-top: 0;
+}
+
+body.landing #header {
+	background: transparent;
+	box-shadow: none;
+	position: absolute;
+}
+
 
 /* Banner */
 
@@ -3627,6 +3576,32 @@ input, select, textarea {
 				bottom: 0;
 				right: 0;
 			}
+
+			#banner .content {
+				display: inline-block;
+				margin-right: 1%;
+				max-width: 95%;
+				padding: 6em;
+				position: relative;
+				text-align: right;
+				vertical-align: middle;
+				z-index: 1;
+			}
+	
+				#banner .content header {
+					display: inline-block;
+					vertical-align: middle;
+				}
+	
+					#banner .content header h2 {
+						font-size: 2.5em;
+						margin: 0;
+					}
+	
+					#banner .content header p {
+						margin: 0.5em 0 0 0;
+						top: 0;
+					}
 
 		#banner p {
 			letter-spacing: 0.225em;
